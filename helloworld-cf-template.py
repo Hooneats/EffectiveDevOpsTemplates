@@ -1,6 +1,8 @@
 """클라우드 포메이션 템플릿 생성"""
 from ipaddress import ip_network
+
 from ipify import get_ip
+
 from troposphere import (
     Base64,
     ec2,
@@ -13,7 +15,7 @@ from troposphere import (
 )
 
 ApplicationPort = "3000"
-PublicCidrIp = str(ip_networ(get_ip()))
+PublicCidrIp = str(ip_network(get_ip()))
 
 t = Template()
 
